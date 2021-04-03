@@ -1,0 +1,17 @@
+.form {
+  text-align: center;
+  background-color: rgb(199, 199, 199);
+  width: 360px;
+  padding: 3rem 3rem;
+}
+
+.form-control {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 1rem;
+}
+
+.btn {
+  margin-top: 1rem;
+  border-radius: 10px;
+}

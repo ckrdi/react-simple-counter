@@ -9,13 +9,12 @@ export default function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (firstName && email) {
-      const person = { firstName, email }
+      const person = { id: new Date().getTime().toString(), firstName, email }
       setPeople((people) => {
         return [...people, person];
       })
       setFirstName('')
       setEmail('')
-      return people;
     }
   }
   return (
@@ -31,6 +30,15 @@ export default function Form() {
         </div>
         <button className="btn">Submit</button>
       </form>
+      {people.map((person) => {
+        const { id, firstName, email } = person;
+        return (
+          <div key={id} className="list">
+            <h4>{firstName}</h4>
+            <h5>{email}</h5>
+          </div>
+        )
+      })}
     </>
   )
 }
